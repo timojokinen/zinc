@@ -1,0 +1,26 @@
+{
+  "name": "zinc",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/zinc/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "zinc:build",
+        "runBuildTargetDependencies": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "zinc:build:development"
+        },
+        "production": {
+          "buildTarget": "zinc:build:production"
+        }
+      }
+    }
+  }
+}
