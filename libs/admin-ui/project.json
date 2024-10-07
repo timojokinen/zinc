@@ -1,0 +1,33 @@
+{
+  "name": "admin-ui",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/admin-ui/src",
+  "projectType": "library",
+  "release": {
+    "version": {
+      "generatorOptions": {
+        "packageRoot": "dist/{projectRoot}",
+        "currentVersionResolver": "git-tag"
+      }
+    }
+  },
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/admin-ui",
+        "tsConfig": "libs/admin-ui/tsconfig.lib.json",
+        "packageJson": "libs/admin-ui/package.json",
+        "main": "libs/admin-ui/src/index.ts",
+        "assets": ["libs/admin-ui/*.md"]
+      }
+    },
+    "nx-release-publish": {
+      "options": {
+        "packageRoot": "dist/{projectRoot}"
+      }
+    }
+  }
+}

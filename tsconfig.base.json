@@ -10,11 +10,27 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2020", "dom"],
+    "lib": [
+      "es2020",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@zinc/admin-ui": [
+        "libs/admin-ui/src/index.ts"
+      ],
+      "@zinc/core": [
+        "libs/core/src/index.ts"
+      ],
+      "@zinc/database": [
+        "libs/database/src/index.ts"
+      ]
+    },
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }
